@@ -6,7 +6,7 @@ export default () => {
     const [searchText, setSearchText] = useState("");
     const clases = styles();
 
-    
+
 
     const handleSearchTextChange = e => {
         setSearchText(e.target.value);
@@ -30,9 +30,9 @@ export default () => {
                             Bienvenido!
                         </Typography>
                     </Grid>
-                    <Grid>
-                        <lavel>Icono</lavel>
-                    </Grid>
+                    {/* <Grid>
+                            <MovieIcon className={clases.movieIcon} />
+                    </Grid> */}
                 </Grid>
                 <TextField
                     value={searchText}
