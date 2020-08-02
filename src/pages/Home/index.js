@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { Container, Card, Grid, Typography, TextField, Button } from "@material-ui/core"
 import styles from "./style";
 
-export default () => {
+export default ({ history }) => {
+    console.log(history);
     const [searchText, setSearchText] = useState("");
     const clases = styles();
-
-
 
     const handleSearchTextChange = e => {
         setSearchText(e.target.value);
@@ -14,10 +13,13 @@ export default () => {
 
     const hanleCleanTextClick = e => {
         console.log("hice click en limpiar");
+        setSearchText("");
 
     };
     const handleSearchTextClick = e => {
         console.log("hice click en buscar");
+        history.push(`/results?movieName=${searchText}`);
+        // me manda al link donde esta la pelicula que busco
     };
     console.log(searchText);
 
