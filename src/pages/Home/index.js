@@ -3,7 +3,7 @@ import { Container, Card, Grid, Typography, TextField, Button } from "@material-
 import styles from "./style";
 
 export default ({ history }) => {
-    console.log(history);
+
     const [searchText, setSearchText] = useState("");
     const clases = styles();
 
