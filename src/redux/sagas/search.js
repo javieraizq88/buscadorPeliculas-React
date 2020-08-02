@@ -1,12 +1,12 @@
-import { put, call, takeLatest } from "redux-saga";
-import { SEARCH_NOVIE_START } from "../../consts/actionTypes";
+import { put, call, takeLatest } from "redux-saga/effects";
+import { SEARCH_NOVIE_START, SEARCH_NOVIE_ERROR, SEARCH_NOVIE_COMPLETE } from "../../consts/actionTypes";
 
-export function* searchMovie({ payload}) {
+export function* searchMovie({ payload }) {
     try {
- 
+        console.log("Accion inicial llamada");
     } catch (error) {
 
-    } 
+    }
 }
 
 export default function* search() {

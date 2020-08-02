@@ -12,12 +12,12 @@ export default ({ history }) => {
     };
 
     const hanleCleanTextClick = e => {
-        console.log("hice click en limpiar");
+        // console.log("hice click en limpiar");
         setSearchText("");
 
     };
     const handleSearchTextClick = e => {
-        console.log("hice click en buscar");
+        // console.log("hice click en buscar");
         history.push(`/results?movieName=${searchText}`);
         // me manda al link donde esta la pelicula que busco
     };
