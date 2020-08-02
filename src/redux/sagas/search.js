@@ -3,6 +3,7 @@ import { SEARCH_NOVIE_START, SEARCH_NOVIE_ERROR, SEARCH_NOVIE_COMPLETE } from ".
 
 import { apiCall } from "../api";
 
+// uso el export pq lo voy a usar en otro componente
 export function* searchMovie({ payload }) {
     try {
         // console.log("Accion inicial llamada");
@@ -12,6 +13,7 @@ export function* searchMovie({ payload }) {
         yield put({ type: SEARCH_NOVIE_ERROR, error });
     }
 }
+
 
 export default function* search() {
     yield takeLatest(SEARCH_NOVIE_START, searchMovie);

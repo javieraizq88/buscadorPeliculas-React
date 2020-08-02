@@ -3,25 +3,26 @@ import { Container, Card, Grid, Typography, TextField, Button } from "@material-
 import styles from "./style";
 
 export default ({ history }) => {
-
+   
+    // se importa el useState como searchText y se pone como valor del TextField
+   // searchText es el State del input
     const [searchText, setSearchText] = useState("");
     const clases = styles();
 
     const handleSearchTextChange = e => {
         setSearchText(e.target.value);
-    };
+        // cambia el valor del setSearchText cada vez que se escribe en el TextField (q es el setState)
+    }; 
 
     const hanleCleanTextClick = e => {
-        // console.log("hice click en limpiar");
         setSearchText("");
-
+        // hace setState y vacia el state
     };
+
     const handleSearchTextClick = e => {
-        // console.log("hice click en buscar");
         history.push(`/results?movieName=${searchText}`);
         // me manda al link donde esta la pelicula que busco
     };
-    console.log(searchText);
 
     return (
         <Container className={clases.container}>
