@@ -6,16 +6,16 @@ const initialState = {};
 export default function (state = initialState, action) {
     switch (action.type) {
         case SEARCH_NOVIE_START:
-            return { ...state };
+            return { ...state, isLoading: true };
             break;
         case SEARCH_NOVIE_ERROR:
-            return { ...state };
+            console.log(action);
+            return { 
+                ...state, isLoading: false, movies: null };
             break;
-
         case SEARCH_NOVIE_COMPLETE:
-            return { ...state };
+            return { ...state, isLoading: false, movieResults: action.results.data };
             break;
-
         default:
             return { ...state };
     }
