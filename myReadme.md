@@ -31,9 +31,3 @@
     $ npm install @material-ui/core
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
-
-# crear componente Home
-    Grid es como los col de Bootstrap
-    Typography cambia la letra
-    TextField es un input
-
