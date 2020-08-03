@@ -2,9 +2,15 @@ import React from "react";
 import { Card, Grid, Typography, Button } from "@material-ui/core";
 
 import style from "./style";
+import { withRouter } from "react-router-dom";
 
-const MovieResult = ({ Title, Year, Type, imdID, Poster }) => {
+const MovieResult = ({ Title, Year, Type, imdbID, Poster, history }) => {
     const clases = style();
+
+    const handleSeeMovieClick = () => {
+        history.push(`/movie/${imdbID}`);
+        // reenvía a la pagina de cada pelicula al hacer click al boton ver mar
+    };
 
     return (
         <Card className={clases.cardContainer}>
@@ -21,8 +27,9 @@ const MovieResult = ({ Title, Year, Type, imdID, Poster }) => {
                     <Typography> {Type} </Typography>
                     <Button
                         color="primary"
-                        variant="contained">
-                        Ver más
+                        variant="contained"
+                        onClick= {handleSeeMovieClick}>
+                        VER MAS
                     </Button>
                 </Grid>
             </Grid>
@@ -31,4 +38,4 @@ const MovieResult = ({ Title, Year, Type, imdID, Poster }) => {
     )
 }
 
-export default MovieResult;
+export default withRouter(MovieResult);
