@@ -11,9 +11,11 @@ export default ({ match }) => {
 
     // console.log(movieResult);
     useEffect(() => {
+        const movieId = match.params.id;
 
-        if (!movieResult) {
-            const movieId = match.params.id;
+        // si la pelicula no existe, entra a hacer un dispatch
+        // o si la peliucula ya existe y el resultado del ID es diferente al nuevo q estoy tbn va a entrar al dispatch
+        if (!movieResult || movieResult && movieResult.imdbID !== movieId) {
             dispatch(searchMovieById({ movieId }));
         }
     });
