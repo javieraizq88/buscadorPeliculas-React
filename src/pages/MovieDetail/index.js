@@ -1,10 +1,63 @@
-import React from "react"
-import { Container } from "@material-ui/core"
+import React, { useEffect } from "react";
+import { Container, CircularProgress, Typography } from "@material-ui/core";
+import { useDispatch, useSelector } from "react-redux";
 
-export default () => {
+import { movieResult as movieResultSelector } from "../../redux/selector";
+import { searchMovieById } from "../../redux/actions/search";
+
+export default ({ match }) => {
+    const dispatch = useDispatch();
+    const movieResult = useSelector(state => movieResultSelector(state));
+
+    // console.log(movieResult);
+    useEffect(() => {
+
+        if (!movieResult) {
+            const movieId = match.params.id;
+            dispatch(searchMovieById({ movieId }));
+        }
+    });
+
+    if (!movieResult) {
+        return <CircularProgress size={100} color="primary" />
+    }
+
     return (
         <Container >
-            MovieDetail
+            <Typography variant="h3">
+                {movieResult.Title}
+            </Typography>
+            <img
+                src={movieResult.Poster}
+                alt={movieResult.Title}
+            />
+            <Typography>
+                <strong> Actores: </strong> {movieResult.Actors}
+            </Typography>
+            <Typography>
+                <strong> Idioma: </strong> {movieResult.Language}
+            </Typography>
+            <Typography>
+                <strong> Año: </strong> {movieResult.Year}
+            </Typography>
+            <Typography>
+                <strong> Género: </strong> {movieResult.Genre}
+            </Typography>
+            <Typography>
+                <strong> País: </strong> {movieResult.Country}
+            </Typography>
+            <Typography>
+                <strong> Duración: </strong> {movieResult.Runtime}
+            </Typography>
+            <Typography>
+                <strong> Actores: </strong> {movieResult.Actors}
+            </Typography>
+            <Typography>
+                <strong> Premios: </strong> {movieResult.Awards}
+            </Typography>
+            <Typography>
+                <strong> Sinopsis: </strong> {movieResult.Plot}
+            </Typography>
         </Container>
     )
 
