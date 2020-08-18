@@ -33,9 +33,6 @@ export default ({ history }) => {
                             Bienvenido!
                         </Typography>
                     </Grid>
-                    {/* <Grid>
-                            <MovieIcon className={clases.movieIcon} />
-                    </Grid> */}
                 </Grid>
                 <TextField
                     value={searchText}

@@ -29,10 +29,13 @@ export default ({ match }) => {
             <Typography variant="h3">
                 {movieResult.Title}
             </Typography>
+            <br/>
             <img
                 src={movieResult.Poster}
                 alt={movieResult.Title}
             />
+            <br/>
+            <br/>
             <Typography>
                 <strong> Actores: </strong> {movieResult.Actors}
             </Typography>
