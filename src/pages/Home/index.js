@@ -30,7 +30,7 @@ export default ({ history }) => {
                 <Grid container className={clases.titleGridContainer}>
                     <Grid>
                         <Typography className={clases.title}>
-                            Bienvenido!
+                            Buscador de peliculas y series
                         </Typography>
                     </Grid>
                 </Grid>
