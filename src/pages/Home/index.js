@@ -29,9 +29,9 @@ export default ({ history }) => {
             <Card className={clases.cardContainer}>
                 <Grid container className={clases.titleGridContainer}>
                     <Grid>
-                        <Typography className={clases.title}>
+                        <h2 className={clases.title}>
                             Buscador de peliculas y series
-                        </Typography>
+                        </h2>
                     </Grid>
                 </Grid>
                 <TextField
