@@ -29,7 +29,7 @@ export default ({ history }) => {
             <Card className={clases.cardContainer}>
                 <Grid container className={clases.titleGridContainer}>
                     <Grid>
-                        <h2 className={clases.title}>
+                        <h2>
                             Buscador de peliculas y series
                         </h2>
                     </Grid>
